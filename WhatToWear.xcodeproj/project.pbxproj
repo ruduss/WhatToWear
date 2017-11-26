@@ -19,6 +19,7 @@
 		9F4EED1F1F6EB3CD004DB4B4 /* OutfitCollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4EED1E1F6EB3CD004DB4B4 /* OutfitCollectionsViewModel.swift */; };
 		9F4EED2C1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4EED2A1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift */; };
 		9F4EED2D1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4EED2B1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib */; };
+		9F81402B1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81402A1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift */; };
 		9FC8514F1F76A368001223EB /* OutfitCollectionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8514D1F76A368001223EB /* OutfitCollectionsHeaderView.swift */; };
 		9FC851501F76A368001223EB /* OutfitCollectionsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC8514E1F76A368001223EB /* OutfitCollectionsHeaderView.xib */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		9F4EED1E1F6EB3CD004DB4B4 /* OutfitCollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionsViewModel.swift; sourceTree = "<group>"; };
 		9F4EED2A1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F4EED2B1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutfitCollectionViewCell.xib; sourceTree = "<group>"; };
+		9F81402A1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9FC8514D1F76A368001223EB /* OutfitCollectionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionsHeaderView.swift; sourceTree = "<group>"; };
 		9FC8514E1F76A368001223EB /* OutfitCollectionsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutfitCollectionsHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 				9F4EECF91F6EA6D9004DB4B4 /* OutfitCollectionsViewController.swift */,
 				9F4EED2A1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift */,
 				9F4EED2B1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib */,
+				9F81402A1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift */,
 			);
 			path = OutfitCollections;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				9F4EED2C1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift in Sources */,
 				9F4EED1F1F6EB3CD004DB4B4 /* OutfitCollectionsViewModel.swift in Sources */,
 				9F4EECFA1F6EA6D9004DB4B4 /* OutfitCollectionsViewController.swift in Sources */,
+				9F81402B1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift in Sources */,
 				9F4EECF81F6EA6D9004DB4B4 /* AppDelegate.swift in Sources */,
 				9FC8514F1F76A368001223EB /* OutfitCollectionsHeaderView.swift in Sources */,
 				9F4EED1D1F6EAE10004DB4B4 /* Outfit.swift in Sources */,

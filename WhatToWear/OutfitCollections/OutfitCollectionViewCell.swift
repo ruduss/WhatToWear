@@ -15,12 +15,11 @@ class OutfitCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    func configureCell(outfitCollection: OutfitCollection) {
+    func configure(with outfit: Outfit) {
         self.image.image = UIImage(named: "white_t_shirt")
-        self.text.text = outfitCollection.name
+        self.text.text = outfit.name
     }
 
 }

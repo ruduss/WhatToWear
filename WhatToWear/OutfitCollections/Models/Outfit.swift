@@ -9,8 +9,8 @@
 import UIKit
 
 class Outfit: NSObject {
-    private var name: String
-    private var picture: String
+    private(set) var name: String
+    private(set) var picture: String
     
     init(name: String, picture: String) {
         self.name = name

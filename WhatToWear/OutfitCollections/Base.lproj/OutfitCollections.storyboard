@@ -17,21 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-no-XNG">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-no-XNG">
                                 <rect key="frame" x="0.0" y="48" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.3669395931102587" blue="0.41324658437267547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fp-7r-Hly">
-                                    <size key="itemSize" width="182" height="182"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="aZg-eW-Xhn" customClass="OutfitCollectionViewLayout"/>
                                 <cells/>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pah-Uv-la1" customClass="OutfitCollectionsHeaderView" customModule="WhatToWear" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="tX6-cg-Qxt" id="qPI-P0-xGf"/>
+                                    <outlet property="delegate" destination="tX6-cg-Qxt" id="f6o-r0-Kfn"/>
+                                </connections>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Collections" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-Ic-uo5">
                                 <rect key="frame" x="16" y="10" width="314" height="30"/>
