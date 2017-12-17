@@ -13,7 +13,7 @@ class OutfitCollectionsHeaderView: UICollectionReusableView {
     @IBOutlet weak var headerLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.headerLabel.text = "bob"
     }
     
 }

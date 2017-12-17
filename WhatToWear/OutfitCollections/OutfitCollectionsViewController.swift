@@ -15,7 +15,10 @@ class OutfitCollectionsViewController: UIViewController {
    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var headerViewLabel: UILabel!
     let identifier = "OutfitCollectionViewCell"
+    let headerIdentifier = "OutfitCollectionsHeaderView"
+    
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
     override func viewDidLoad() {
@@ -30,16 +33,17 @@ class OutfitCollectionsViewController: UIViewController {
 }
 
 extension OutfitCollectionsViewController: UICollectionViewDelegate {
-    internal func collectionView(collectionView: UICollectionView, didSelectItemAt: IndexPath) {
+    internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt: IndexPath) {
         
         
     }
     
-    internal func collectionView(collectionView: UICollectionView, shouldHighlightItemAt: IndexPath) {
+    internal func collectionView(_: UICollectionView, shouldHighlightItemAt: IndexPath) {
         
     }
 }
 
+// MARK:- UICollectionViewDataSource Delegate
 extension OutfitCollectionsViewController: UICollectionViewDataSource {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -66,7 +70,7 @@ extension OutfitCollectionsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as? OutfitCollectionsHeaderView else {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.headerIdentifier, for: indexPath) as? OutfitCollectionsHeaderView else {
             return UICollectionReusableView()
         }
     
