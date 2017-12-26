@@ -10,10 +10,10 @@ import UIKit
 
 class OutfitCollectionsHeaderView: UICollectionReusableView {
 
-    @IBOutlet weak var headerLabel: UILabel!
+   // @IBOutlet weak var headerLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.headerLabel.text = "bob"
+        //self.headerLabel.text = "bob"
     }
     
 }

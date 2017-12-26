@@ -15,9 +15,8 @@ class OutfitCollectionsViewController: UIViewController {
    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var headerViewLabel: UILabel!
-    let identifier = "OutfitCollectionViewCell"
-    let headerIdentifier = "OutfitCollectionsHeaderView"
+    let outfitCollectionViewCell = "OutfitCollectionViewCell"
+    let outfitCollectionHeaderCellId = "OutfitCollectionsHeaderViewCell"
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
@@ -27,23 +26,27 @@ class OutfitCollectionsViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        let nib = UINib(nibName: self.identifier, bundle: nil)
-        self.collectionView.register(nib, forCellWithReuseIdentifier: self.identifier)
+        self.collectionView.register(UINib(nibName: "OutfitCollectionsHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: self.outfitCollectionHeaderCellId)
+        self.collectionView.register(UINib(nibName: self.outfitCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: self.outfitCollectionViewCell)
+        
+        
+        
     }
 }
 
 extension OutfitCollectionsViewController: UICollectionViewDelegate {
+    
     internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt: IndexPath) {
         
         
     }
     
-    internal func collectionView(_: UICollectionView, shouldHighlightItemAt: IndexPath) {
-        
-    }
+//    internal func collectionView(_: UICollectionView, shouldHighlightItemAt: IndexPath) {
+//
+//    }
 }
 
-// MARK:- UICollectionViewDataSource Delegate
+// MARK:- UICollectionViewDataSource
 extension OutfitCollectionsViewController: UICollectionViewDataSource {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -55,7 +58,7 @@ extension OutfitCollectionsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.identifier, for:indexPath) as? OutfitCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.outfitCollectionViewCell, for:indexPath) as? OutfitCollectionViewCell else {
             return UICollectionViewCell()
         }
         
@@ -69,16 +72,22 @@ extension OutfitCollectionsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.outfitCollectionHeaderCellId, for: indexPath) as? OutfitCollectionsHeaderView else {
+                return UICollectionReusableView()
+            }
     
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.headerIdentifier, for: indexPath) as? OutfitCollectionsHeaderView else {
-            return UICollectionReusableView()
+            //headerView.headerLabel.text = self.outfitCollectionsViewModel.outfitCollections[indexPath.item].name
+            return headerView
+        default:
+            assert(false, "Unexpected element kind")
         }
-    
-        headerView.headerLabel.text = self.outfitCollectionsViewModel.outfitCollections[indexPath.item].name
-        return headerView
     }
+    
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension OutfitCollectionsViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
