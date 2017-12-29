@@ -8,12 +8,16 @@
 
 import UIKit
 
-class OutfitCollectionsHeaderView: UICollectionReusableView {
+class OutfitCollectionsHeaderView: UICollectionViewCell {
 
-   // @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var headerLabel: UILabel!
+    
+    func configure(with outfitCollection: OutfitCollection) {
+        self.headerLabel.text = outfitCollection.name
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        //self.headerLabel.text = "bob"
     }
     
 }

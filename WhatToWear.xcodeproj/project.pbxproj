@@ -20,8 +20,10 @@
 		9F4EED2C1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4EED2A1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift */; };
 		9F4EED2D1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4EED2B1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib */; };
 		9F81402B1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81402A1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift */; };
+		9FB7D09A1FF655FD001BA2A6 /* OutfitCollectionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB7D0991FF655FD001BA2A6 /* OutfitCollectionsViewModelTests.swift */; };
 		9FC8514F1F76A368001223EB /* OutfitCollectionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8514D1F76A368001223EB /* OutfitCollectionsHeaderView.swift */; };
-		9FC851501F76A368001223EB /* OutfitCollectionsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC8514E1F76A368001223EB /* OutfitCollectionsHeaderView.xib */; };
+		9FF954701FF3A82E0027D181 /* OutfitCollectionsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF9546F1FF3A82E0027D181 /* OutfitCollectionsHeaderView.xib */; };
+		9FF954721FF3B2A00027D181 /* OutfitDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF954711FF3B2A00027D181 /* OutfitDetailView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,10 @@
 		9F4EED2A1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F4EED2B1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutfitCollectionViewCell.xib; sourceTree = "<group>"; };
 		9F81402A1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewLayout.swift; sourceTree = "<group>"; };
+		9FB7D0991FF655FD001BA2A6 /* OutfitCollectionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionsViewModelTests.swift; sourceTree = "<group>"; };
 		9FC8514D1F76A368001223EB /* OutfitCollectionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionsHeaderView.swift; sourceTree = "<group>"; };
-		9FC8514E1F76A368001223EB /* OutfitCollectionsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutfitCollectionsHeaderView.xib; sourceTree = "<group>"; };
+		9FF9546F1FF3A82E0027D181 /* OutfitCollectionsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutfitCollectionsHeaderView.xib; sourceTree = "<group>"; };
+		9FF954711FF3B2A00027D181 /* OutfitDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OutfitDetailView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		9F4EED0E1F6EA6D9004DB4B4 /* WhatToWearTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FB7D0981FF655DE001BA2A6 /* Models */,
 				9F4EED0F1F6EA6D9004DB4B4 /* WhatToWearTests.swift */,
 				9F4EED111F6EA6D9004DB4B4 /* Info.plist */,
 			);
@@ -121,7 +126,6 @@
 				9F4EED1C1F6EAE10004DB4B4 /* Outfit.swift */,
 				9F4EED1A1F6EAD70004DB4B4 /* OutfitCollection.swift */,
 				9FC8514D1F76A368001223EB /* OutfitCollectionsHeaderView.swift */,
-				9FC8514E1F76A368001223EB /* OutfitCollectionsHeaderView.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,8 +139,18 @@
 				9F4EED2A1F6F036C004DB4B4 /* OutfitCollectionViewCell.swift */,
 				9F4EED2B1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib */,
 				9F81402A1FCB4FDD0090273D /* OutfitCollectionViewLayout.swift */,
+				9FF9546F1FF3A82E0027D181 /* OutfitCollectionsHeaderView.xib */,
+				9FF954711FF3B2A00027D181 /* OutfitDetailView.storyboard */,
 			);
 			path = OutfitCollections;
+			sourceTree = "<group>";
+		};
+		9FB7D0981FF655DE001BA2A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FB7D0991FF655FD001BA2A6 /* OutfitCollectionsViewModelTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +236,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC851501F76A368001223EB /* OutfitCollectionsHeaderView.xib in Resources */,
 				9F4EED051F6EA6D9004DB4B4 /* LaunchScreen.storyboard in Resources */,
 				9F4EED021F6EA6D9004DB4B4 /* Assets.xcassets in Resources */,
+				9FF954701FF3A82E0027D181 /* OutfitCollectionsHeaderView.xib in Resources */,
+				9FF954721FF3B2A00027D181 /* OutfitDetailView.storyboard in Resources */,
 				9F4EECFD1F6EA6D9004DB4B4 /* OutfitCollections.storyboard in Resources */,
 				9F4EED2D1F6F036C004DB4B4 /* OutfitCollectionViewCell.xib in Resources */,
 			);
@@ -261,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4EED101F6EA6D9004DB4B4 /* WhatToWearTests.swift in Sources */,
+				9FB7D09A1FF655FD001BA2A6 /* OutfitCollectionsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

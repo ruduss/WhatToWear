@@ -26,11 +26,10 @@ class OutfitCollectionsViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        self.collectionView.register(UINib(nibName: "OutfitCollectionsHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: self.outfitCollectionHeaderCellId)
-        self.collectionView.register(UINib(nibName: self.outfitCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: self.outfitCollectionViewCell)
-        
-        
-        
+        self.collectionView.register(UINib(nibName: "OutfitCollectionsHeaderView", bundle: nil),
+                                     forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: self.outfitCollectionHeaderCellId)
+        self.collectionView.register(UINib(nibName: self.outfitCollectionViewCell, bundle: nil),
+                                     forCellWithReuseIdentifier: self.outfitCollectionViewCell)
     }
 }
 
@@ -38,31 +37,33 @@ extension OutfitCollectionsViewController: UICollectionViewDelegate {
     
     internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt: IndexPath) {
         
-        
     }
-    
-//    internal func collectionView(_: UICollectionView, shouldHighlightItemAt: IndexPath) {
-//
-//    }
 }
 
 // MARK:- UICollectionViewDataSource
 extension OutfitCollectionsViewController: UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.outfitCollectionsViewModel.outfitCollections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.outfitCollectionsViewModel.outfitCollections[section].outfits.count
+        guard let currentCollectionName = self.outfitCollectionsViewModel.outfitCollections[section].name as? String,
+            let outfitsInCollection = self.outfitCollectionsViewModel.getOutfitsInCollection(by: currentCollectionName) as? [Outfit] else {
+                return 0
+        }
+        return outfitsInCollection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.outfitCollectionViewCell, for:indexPath) as? OutfitCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
-        guard let outfit = self.outfitCollectionsViewModel.outfitCollections[indexPath.section].outfits[indexPath.row] as? Outfit else {
+       
+        guard let outfitsInGroup =
+            self.outfitCollectionsViewModel.getOutfitsInCollection(by: self.outfitCollectionsViewModel.outfitCollections[indexPath.section].name),
+            let outfit = outfitsInGroup[indexPath.row] as? Outfit
+        else {
             return UICollectionViewCell()
         }
         
@@ -77,8 +78,8 @@ extension OutfitCollectionsViewController: UICollectionViewDataSource {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.outfitCollectionHeaderCellId, for: indexPath) as? OutfitCollectionsHeaderView else {
                 return UICollectionReusableView()
             }
-    
-            //headerView.headerLabel.text = self.outfitCollectionsViewModel.outfitCollections[indexPath.item].name
+            headerView.configure(with: self.outfitCollectionsViewModel.outfitCollections[indexPath.section])
+            
             return headerView
         default:
             assert(false, "Unexpected element kind")

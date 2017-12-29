@@ -10,10 +10,9 @@ import UIKit
 
 class OutfitCollection: NSObject {
     var name: String
-    var outfits: [Outfit]
     
-    init(name: String, outfits: [Outfit]) {
+    init(name: String) {
         self.name = name
-        self.outfits = outfits
     }
+    
 }
